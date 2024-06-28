@@ -13,7 +13,7 @@
         </br>
 
         <label> Input Jumlah Kolom : </label>
-        <input type="text" name="total_column"/>
+        <input type="text" name="total_column" />
         </br>
 
         <button type="submit">Submit </button>
