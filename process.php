@@ -5,12 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $totalColumn = (int) $_POST['total_column'];
 
     // validate condition
-    if($totalRow == 1){
+    if( ($totalRow == 1) && ($totalRow <= $totalColumn)){
         echo "<form action='process2.php' method='post'>";
         for ($i=1; $i <= $totalColumn ; $i++) { 
             echo "<label> ".$totalRow.".".$i." </label> <input type='text' name='data[]' />";
         }
         echo "<button type='submit'> Submit </button>";
+        return;
     }
     
     if( ($totalRow > 1) && ($totalRow < $totalColumn) ){
@@ -23,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<label> ".$i.".". $j." </label> <input type='text' name='data[]' /> </br>";
         }
         echo "<button type='submit'> Submit </button>";
+        return;
     }
 
     if($totalColumn == $totalColumn){
@@ -36,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<label> ".$i." </label> <input type='text' name='data[]' /> </br>";
             }
         echo "<button type='submit'> Submit </button>";
+        return;
     }
 }
 ?>
